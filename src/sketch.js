@@ -11,13 +11,19 @@ function setup() {
 function draw() {
   //_________ Background x, y, floor
   drawBackground(0,0,color(202, 240, 248),color(255))
-  
+
+  //___________Creature_______________
+  drawCreature(0,0,color(225),color(230,131,17),color(230,166,69),color(0));
+
+  //_______________Penguin________________
+    //x,y,colorDark,colorLight,colorEye,colorBeak
+    drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
 }
 
 //_________________Draw Background____________
 
-function drawBackground(x,y,colorFloor,colorSnow){
-  push();
+//function drawBackground(x,y,colorFloor,colorSnow){
+ /* push();
     //—Floor
     translate(x,y)
     fill(colorFloor)
@@ -47,7 +53,7 @@ function drawBackground(x,y,colorFloor,colorSnow){
     ellipse(170,-75,10,10);
     ellipse(25,-375,10,10);
   pop();
-}
+} */
 
 
 function draw() {
@@ -146,21 +152,6 @@ function draw() {
   
 }
 
-let clicked = false;
-
-function draw() {
-
-  //_______________Penguin________________
-    //x,y,colorDark,colorLight,colorEye,colorBeak
-     drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
-  
-  //________surprise_________
-  if(clicked){
-    //x,y,colorHead,colorEyes,colorNose,colorMouth
-    drawSurprise(200,400,color(29,53,87),color(0),color(241,136,5),color(191,67,66),color(72, 202, 228));
-   }
-  
-}
 
 
 //_________________Function for Penguin___________________
@@ -223,41 +214,3 @@ function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
   pop();
   
 }
-
-//________________Surprise________________
-  function drawSurprise(x,y,colorHead,colorEyes,colorNose,colorMouth,colorTears){
-    translate(x,y);
-    scale(.5);
-    //---head---
-    fill(colorHead);
-    noStroke();
-    ellipse(0,-275,150);
-    //---eyes---
-    fill(255);
-    ellipse(-30,-287.5,40,25);
-    ellipse(30,-287.5,40,25);
-    fill(colorEyes);
-    ellipse(-30,-287.5,15,15);
-    ellipse(30,-287.5,15,15);
-    //--nose---
-    fill(colorNose);
-    quad(-20,-275,0,-280,20,-275,0,-240);
-    //---mouth---
-    fill(colorMouth)
-    ellipse(0,-230,40,15);
-    fill(colorTears)
-    rect(-35,-280,10,80);
-    rect(25,-280,10,80);
-  }
-  
-  function mouseClicked() 
-  //---bounding box
-{
-  if(mouseX < 275 &&
-     mouseX > 125 &&
-    mouseY < 200 &&
-     mouseY > 50
-    ) {
-  clicked = !clicked;     
-  }
-  }
