@@ -4,11 +4,12 @@ function setup() {
   // so that we can manipulate its style
   // easier
   let myCanvas = createCanvas(400, 400);
-  background(72, 202, 228);
   myCanvas.parent("canvas-parent");
 }
 
 function draw() {
+  
+  background(72, 202, 228);
   //_________ Background x, y, floor
   drawBackground(0,0,color(202, 240, 248),color(255))
 
@@ -22,8 +23,8 @@ function draw() {
 
 //_________________Draw Background____________
 
-//function drawBackground(x,y,colorFloor,colorSnow){
- /* push();
+function drawBackground(x,y,colorFloor,colorSnow){
+ push();
     //—Floor
     translate(x,y)
     fill(colorFloor)
@@ -53,10 +54,10 @@ function draw() {
     ellipse(170,-75,10,10);
     ellipse(25,-375,10,10);
   pop();
-} */
+} 
 
 
-function draw() {
+function drawCreature() {
   //---------- Creature--- -------------------------
   push();
     //teeth
