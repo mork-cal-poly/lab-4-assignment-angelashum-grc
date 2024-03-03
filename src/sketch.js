@@ -9,22 +9,48 @@ function setup() {
 }
 
 function draw() {
-  //---------- Background -------------------------
-  push();
-    //ground
-    fill(34,31,235);
-    translate(-200,0)
-    rect(200,250,400,400);
-  pop();
+  //_________ Background x, y, floor
+  drawBackground(0,0,color(202, 240, 248),color(255))
   
+}
+
+//_________________Draw Background____________
+
+function drawBackground(x,y,colorFloor,colorSnow){
   push();
-    //moon
-    fill(235,233,30);
+    //—Floor
+    translate(x,y)
+    fill(colorFloor)
     noStroke();
-    translate(200,300);
-    arc(100,-200,80,90,7*PI/4,3*PI/4);
+    rect(0, 300, 400, 100) 
+   pop();
+
+  // —-Snow
+  push();
+    translate(200,400);
+    fill(colorSnow);
+    noStroke();
+    ellipse(-125,-300,10,10);
+    ellipse(-140,-100,10,10);
+    ellipse(-175,-225,10,10);
+    ellipse(110,-125,10,10);
+    ellipse(175,-150,10,10);
+    ellipse(-155,-75,10,10);
+    ellipse(-125,-30,10,10);
+    ellipse(120,-375,10,10);
+    ellipse(-175,-375,10,10);
+    ellipse(125,-300,10,10);
+    ellipse(150,-200,10,10);
+    ellipse(-25,-375,10,10);
+    ellipse(160,-250,10,10);
+    ellipse(150,-25,10,10);
+    ellipse(170,-75,10,10);
+    ellipse(25,-375,10,10);
   pop();
-  
+}
+
+
+function draw() {
   //---------- Creature--- -------------------------
   push();
     //teeth
@@ -124,9 +150,6 @@ let clicked = false;
 
 function draw() {
 
-  //_________ Background x, y, floor
-  drawBackground(0,0,color(202, 240, 248),color(255))
-  
   //_______________Penguin________________
     //x,y,colorDark,colorLight,colorEye,colorBeak
      drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
@@ -138,40 +161,7 @@ function draw() {
    }
   
 }
-//_________________Draw Background____________
 
-function drawBackground(x,y,colorFloor,colorSnow){
-  push();
-    //—Floor
-    translate(x,y)
-    fill(colorFloor)
-    noStroke();
-    rect(0, 300, 400, 100) 
-   pop();
-
-  // —-Snow
-  push();
-    translate(200,400);
-    fill(colorSnow);
-    noStroke();
-    ellipse(-125,-300,10,10);
-    ellipse(-140,-100,10,10);
-    ellipse(-175,-225,10,10);
-    ellipse(110,-125,10,10);
-    ellipse(175,-150,10,10);
-    ellipse(-155,-75,10,10);
-    ellipse(-125,-30,10,10);
-    ellipse(120,-375,10,10);
-    ellipse(-175,-375,10,10);
-    ellipse(125,-300,10,10);
-    ellipse(150,-200,10,10);
-    ellipse(-25,-375,10,10);
-    ellipse(160,-250,10,10);
-    ellipse(150,-25,10,10);
-    ellipse(170,-75,10,10);
-    ellipse(25,-375,10,10);
-  pop();
-}
 
 //_________________Function for Penguin___________________
 function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
@@ -179,6 +169,7 @@ function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
   push();
     translate(x, y);
     noStroke();
+    scale(.5);
   
   //---Body----
     fill(colorDark);
@@ -236,6 +227,7 @@ function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
 //________________Surprise________________
   function drawSurprise(x,y,colorHead,colorEyes,colorNose,colorMouth,colorTears){
     translate(x,y);
+    scale(.5);
     //---head---
     fill(colorHead);
     noStroke();
