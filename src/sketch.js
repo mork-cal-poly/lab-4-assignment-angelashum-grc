@@ -4,12 +4,8 @@ function setup() {
   // so that we can manipulate its style
   // easier
   let myCanvas = createCanvas(400, 400);
+  background(72, 202, 228);
   myCanvas.parent("canvas-parent");
-}
-
-function setup() {
-  createCanvas(400, 400);
-  background(77,187,237); 
 }
 
 function draw() {
@@ -125,11 +121,6 @@ function draw() {
 }
 
 let clicked = false;
-
-function setup() {
-  createCanvas(400, 400);
-  background(72, 202, 228); //background color 
-}
 
 function draw() {
 
