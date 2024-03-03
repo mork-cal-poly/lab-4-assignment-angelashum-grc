@@ -14,7 +14,7 @@ function draw() {
   drawBackground(0,0,color(202, 240, 248),color(255))
 
   //___________Creature_______________
-  drawCreature(0,0,color(225),color(230,131,17),color(230,166,69),color(0));
+  drawCreature(200,0,color(225),color(230,131,17),color(230,166,69),color(0));
 
   //_______________Penguin________________
     //x,y,colorDark,colorLight,colorEye,colorBeak
@@ -57,19 +57,20 @@ function drawBackground(x,y,colorFloor,colorSnow){
 } 
 
 
-function drawCreature() {
-  //---------- Creature--- -------------------------
+function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
   push();
-    //teeth
-    fill(255,255,255);
+  translate(x, y);
+  
+  //new draw creature teeth???
+  push();
+    fill(colorTeeth);
     noStroke();
     translate(200,300);
     triangle(-100,-50,-110,-30,-120,-80);
   pop();
-  
   push();
     //teeth
-    fill(255,255,255);
+    fill(colorTeeth);
     noStroke();
     translate(180,300);
     triangle(-100,-50,-110,-30,-110,-80);
@@ -77,7 +78,7 @@ function drawCreature() {
   
   push();
     //tail
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(200,300);
     triangle(90,-60,80,-90,120,-40);
@@ -85,15 +86,15 @@ function drawCreature() {
   
   push();
     //body
-    fill(184,126,72);
+    fill(colorLight);
     noStroke();
     translate(200,300);
-    quad(-90,-8,-60,-90,70,-120,97,-45,);
+    quad(-90,-8,-60,-90,70,-120,97,-45);
   pop();
   
   push();
     //left ear
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(200,300);
     triangle(-130,-120,-130,-60,-100,-80);
@@ -101,7 +102,7 @@ function drawCreature() {
   
    push();
     // right ear
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(200,300);
     triangle(-50,-120,-40,-60,-80,-80);
@@ -109,7 +110,7 @@ function drawCreature() {
   
   push ();   
     //Head
-    fill(184,126,72);
+    fill(colorLight);
     noStroke();
     translate(200,300);
     arc(-90,-50,100,110,PI,3*PI/4)
@@ -117,7 +118,7 @@ function drawCreature() {
   
    push ();   
     //eye
-    fill(255, 0, 0);
+    fill(colorEye);
     strokeWeight(2);
     translate(200,300);
     line(-90,-70,-110,-60);
@@ -125,7 +126,7 @@ function drawCreature() {
   
   push();
     //Arm
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(180,300);
     scale(0.8);
@@ -135,7 +136,7 @@ function drawCreature() {
   
   push();
     //Leg
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(270,180);
     rotate(40);
@@ -144,11 +145,13 @@ function drawCreature() {
   
   push();
     //foot
-    fill(133,105,78);
+    fill(colorDark);
     noStroke();
     translate(200,300);
-    rotate(.4);
+    rotate(0.4);
     ellipse(30,-25,40,23);
+  pop();
+  
   pop();
   
 }
