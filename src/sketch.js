@@ -1,4 +1,5 @@
 let x=200;   //translate Creature animation
+let p=0; // penguin rotate
 let clicked = false; 
 
 function setup() {
@@ -27,9 +28,21 @@ function draw() {
   //___________Creature_______________
   drawCreature(x,0,color(225),color(230,131,17),color(230,166,69),color(0));
 
+
+  //________animating penguin 
+  if(x<width/2){
+    p+= radians(2);
+  }else{
+    p=0;
+  }
+
+  push();
+  translate(200,300);
+  rotate(p);
   //_______________Penguin________________
     //x,y,colorDark,colorLight,colorEye,colorBeak
-    drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
+    drawPenguin(0,0,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
+  pop();
 }
 
 //___________animating when clicked____________
