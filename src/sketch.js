@@ -36,13 +36,9 @@ function draw() {
     p=0;
   }
 
-  push();
-  translate(200,300);
-  rotate(p);
   //_______________Penguin________________
-    //x,y,colorDark,colorLight,colorEye,colorBeak
-    drawPenguin(0,0,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
-  pop();
+    //x,y,r, colorDark,colorLight,colorEye,colorBeak
+    drawPenguin(200,300,p, color(29,53,87),color(241,233,218),color(0),color(241,136,5))
 }
 
 //___________animating when clicked____________
@@ -189,11 +185,11 @@ function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
 
 
 //_________________Function for Penguin___________________
-function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
+function drawPenguin(x,y,r, colorDark,colorLight,colorEye,colorBeak){
 
   push();
-    translate(x, y-200);
-    rotate(PI);
+    translate(x, y);
+    rotate(r);
     scale(.5);
     noStroke(); 
 
@@ -244,7 +240,7 @@ function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
   triangle(50,-100,75,-50,25,-50)
   arc(-50,-62.5,75,75,7*PI/4,5*PI/4);
   arc(50,-62.5,75,75,7*PI/4,5*PI/4); 
-  
+
   
   pop();
   
