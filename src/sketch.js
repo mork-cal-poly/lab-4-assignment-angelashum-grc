@@ -179,10 +179,11 @@ function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
 function drawPenguin(x,y,colorDark,colorLight,colorEye,colorBeak){
 
   push();
-    translate(x, y);
-    noStroke();
+    translate(x, y-200);
+    rotate(PI);
     scale(.5);
-  
+    noStroke(); 
+
   //---Body----
     fill(colorDark);
     quad(-75,-225,75,-225,100,-50,-100,-50);
