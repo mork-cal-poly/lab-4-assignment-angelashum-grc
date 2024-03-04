@@ -1,4 +1,4 @@
-let x=200;   //translate Creature animation
+let x=400;   //translate Creature animation
 let p=0; // penguin rotate
 let clicked = false; 
 
@@ -30,6 +30,7 @@ function draw() {
 
 
   //________animating penguin 
+  // Goal: creature left half, penguin spin
   if(x<width/2){
     p+= radians(2);
   }else{
@@ -85,7 +86,7 @@ function drawBackground(x,y,colorFloor,colorSnow){
 
 function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
   push();
-  translate(x, y);
+  translate(x-200, y);
   
   //creature teeth
   push();
