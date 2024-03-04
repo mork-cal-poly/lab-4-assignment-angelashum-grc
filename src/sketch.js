@@ -1,3 +1,5 @@
+let x=200;   //translate Creature animation
+
 function setup() {
   // These lines are fitting our canvas
   // where we want in the DOM
@@ -13,13 +15,26 @@ function draw() {
   //_________ Background x, y, floor
   drawBackground(0,0,color(202, 240, 248),color(255))
 
+  //_______animating creature 
+  x = x - 2; 
+
+  if (x < -200) {
+    x = width;
+  }
+
   //___________Creature_______________
-  drawCreature(200,0,color(225),color(230,131,17),color(230,166,69),color(0));
+  drawCreature(x,0,color(225),color(230,131,17),color(230,166,69),color(0));
 
   //_______________Penguin________________
     //x,y,colorDark,colorLight,colorEye,colorBeak
     drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
 }
+
+//___________animating____________
+  //function mouseClicked(){
+    //x = x-200;
+  //}
+  
 
 //_________________Draw Background____________
 
@@ -61,7 +76,7 @@ function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
   push();
   translate(x, y);
   
-  //new draw creature teeth???
+  //creature teeth
   push();
     fill(colorTeeth);
     noStroke();
