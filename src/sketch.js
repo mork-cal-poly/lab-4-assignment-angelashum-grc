@@ -1,4 +1,5 @@
 let x=200;   //translate Creature animation
+let clicked = false; 
 
 function setup() {
   // These lines are fitting our canvas
@@ -16,10 +17,11 @@ function draw() {
   drawBackground(0,0,color(202, 240, 248),color(255))
 
   //_______animating creature 
-  x = x - 2; 
-
-  if (x < -200) {
-    x = width;
+   if(clicked){ 
+    x = x - 2; 
+    if (x < -200){
+      x=width;
+    }
   }
 
   //___________Creature_______________
@@ -30,10 +32,10 @@ function draw() {
     drawPenguin(200,400,color(29,53,87),color(241,233,218),color(0),color(241,136,5))
 }
 
-//___________animating____________
-  //function mouseClicked(){
-    //x = x-200;
-  //}
+//___________animating when clicked____________
+  function mouseClicked(){
+    clicked = !clicked;
+  }
   
 
 //_________________Draw Background____________
