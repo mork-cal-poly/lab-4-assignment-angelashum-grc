@@ -17,6 +17,10 @@ function draw() {
   //_________ Background x, y, floor
   drawBackground(0,0,color(202, 240, 248),color(255))
 
+  //seal
+  drawSeal(200,450,color('#FFFAF0'),color('#728FCE'),color('#696969'));
+  
+
   //_______animating creature 
    if(clicked){ 
     x = x - 2; 
@@ -83,6 +87,53 @@ function drawBackground(x,y,colorFloor,colorSnow){
   pop();
 } 
 
+//---------- Function for Seal--- -------------------------
+function drawSeal(x,y,colorFur,colorEye,colorNose){
+ 
+  push();
+
+   translate(x, y);
+   scale(0.75)
+   fill(colorFur);
+  
+//fins
+arc(170,40,80,70,15,PI*1/3)
+  
+//right arm
+  ellipse(245,-100,40,80)
+  
+//left arm
+  ellipse(95,-100,40,80)
+  
+//body
+   ellipse(170,-90,150,230)
+  
+//head
+  ellipse(170,-200,110,110)
+  
+//nose
+  fill('#FBFCF8')
+  ellipse(170,-190,-40,-30)
+  fill(colorNose);
+  ellipse(170,-190,-12,-7)
+
+//right eyebrow
+  fill(colorNose)
+  ellipse(185,-220,8,8)
+  
+//left eyebrow
+  fill(colorNose)
+  ellipse(155,-220,8,8)
+  
+//right eye
+  fill(colorEye)
+  ellipse(200,-200,15,15)
+  
+//left eye
+  fill(colorEye)
+  ellipse(140,-200,15,15)
+    pop();
+} 
 
 function drawCreature(x,y,colorTeeth,colorDark,colorLight,colorEye) {
   push();
