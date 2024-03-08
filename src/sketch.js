@@ -18,7 +18,7 @@ function draw() {
   drawBackground(0,0,color(202, 240, 248),color(255))
 
   //seal
-  drawSeal(200,450,color('#FFFAF0'),color('#728FCE'),color('#696969'));
+  drawSeal(300,300,color('#FFFAF0'),color('#728FCE'),color('#696969'));
   
 
   //_______animating creature 
@@ -93,7 +93,7 @@ function drawSeal(x,y,colorFur,colorEye,colorNose){
   push();
 
    translate(x, y);
-   scale(0.75)
+   scale(0.25)
    fill(colorFur);
   
 //fins
